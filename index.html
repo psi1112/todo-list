@@ -1,24 +1,25 @@
+<!-- index.html: todo-list 메인 HTML 파일 -->
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TODO LIST</title>
-  <!-- Tailwind CSS CDN -->
+  <meta charset="UTF-8"> <!-- 문자 인코딩 설정 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 반응형 뷰포트 설정 -->
+  <title>TODO LIST</title> <!-- 페이지 제목 -->
+  <!-- Tailwind CSS CDN: 유틸리티 기반 CSS 프레임워크 -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Custom CSS 연결 -->
+  <!-- 커스텀 CSS 연결 -->
   <link rel="stylesheet" href="style.css" />
 </head>
-<body class="bg-gray-100 min-h-screen flex items-center justify-center">
-  <div class="w-full max-w-md bg-white rounded-lg shadow-lg p-8">
-    <h1 class="text-2xl font-bold text-center mb-6 text-gray-800">TODO LIST</h1>
-    <form id="todo-form" class="flex mb-4">
-      <input id="todo-input" type="text" class="flex-1 border border-gray-300 rounded-l px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="할 일을 입력하세요..." required />
-      <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-r hover:bg-blue-600">추가</button>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center"> <!-- 배경 및 레이아웃 -->
+  <div class="w-full max-w-md bg-white rounded-lg shadow-lg p-8"> <!-- 메인 카드 컨테이너 -->
+    <h1 class="text-2xl font-bold text-center mb-6 text-gray-800">TODO LIST</h1> <!-- 제목 -->
+    <form id="todo-form" class="flex mb-4"> <!-- 할 일 입력 폼 -->
+      <input id="todo-input" type="text" class="flex-1 border border-gray-300 rounded-l px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="할 일을 입력하세요..." required /> <!-- 입력 필드 -->
+      <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-r hover:bg-blue-600">추가</button> <!-- 추가 버튼 -->
     </form>
-    <ul id="todo-list" class="space-y-2"></ul>
-    <button id="clear-btn" class="mt-6 w-full bg-red-500 text-white py-2 rounded hover:bg-red-600">전체 삭제</button>
+    <ul id="todo-list" class="space-y-2"></ul> <!-- 할 일 목록 -->
+    <button id="clear-btn" class="mt-6 w-full bg-red-500 text-white py-2 rounded hover:bg-red-600">전체 삭제</button> <!-- 전체 삭제 버튼 -->
   </div>
-  <script src="app.js"></script>
+  <script src="app.js"></script> <!-- JS 로직 연결 -->
 </body>
 </html>
