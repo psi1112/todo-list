@@ -1,0 +1,122 @@
+/* 다양한 색상 조합과 움직임(애니메이션) 효과 추가 */
+body {
+  font-family: 'Pretendard', 'Noto Sans KR', 'Apple SD Gothic Neo', Arial, sans-serif;
+  background: linear-gradient(120deg, #f8fafc 0%, #e0e7ef 50%, #f0abfc 100%);
+  min-height: 100vh;
+  transition: background 0.5s;
+}
+
+#todo-form input {
+  background: #f9fafb;
+  border: 1.5px solid #e5e7eb;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+#todo-form input:focus {
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 2px #bae6fd;
+}
+#todo-form button {
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  background: linear-gradient(90deg, #38bdf8 0%, #a78bfa 100%);
+  box-shadow: 0 2px 8px 0 rgba(56,189,248,0.08);
+  transition: background 0.3s, transform 0.2s;
+}
+#todo-form button:hover {
+  background: linear-gradient(90deg, #a78bfa 0%, #38bdf8 100%);
+  transform: scale(1.07) rotate(-2deg);
+}
+
+#todo-list li {
+  background: linear-gradient(90deg, #f0abfc 0%, #f9fafb 100%);
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 12px 0 rgba(168,139,250,0.10);
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  opacity: 1;
+  transform: translateY(0);
+  transition: box-shadow 0.2s, background 0.2s, opacity 0.4s, transform 0.4s;
+  animation: fadeInUp 0.5s;
+}
+#todo-list li:hover {
+  background: linear-gradient(90deg, #f472b6 0%, #a5b4fc 100%);
+  box-shadow: 0 6px 24px 0 rgba(236,72,153,0.13);
+  transform: scale(1.03) translateY(-2px);
+}
+#todo-list li .flex-1 {
+  font-size: 1.08rem;
+  color: #374151;
+  transition: color 0.2s, text-decoration 0.2s;
+  cursor: pointer;
+  user-select: none;
+}
+#todo-list li .line-through {
+  color: #a1a1aa;
+  text-decoration: line-through;
+  text-shadow: 0 1px 0 #fff;
+}
+#todo-list li .delete-btn {
+  background: linear-gradient(90deg, #f87171 0%, #fbbf24 100%);
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.3rem 0.9rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 1px 4px 0 rgba(248,113,113,0.08);
+}
+#todo-list li .delete-btn:hover {
+  background: linear-gradient(90deg, #fbbf24 0%, #f87171 100%);
+  transform: scale(1.1) rotate(2deg);
+}
+
+#clear-btn {
+  background: linear-gradient(90deg, #f87171 0%, #fbbf24 100%);
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  border: none;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 8px 0 rgba(251,191,36,0.08);
+  transition: background 0.2s, transform 0.2s;
+}
+#clear-btn:hover {
+  background: linear-gradient(90deg, #a78bfa 0%, #f472b6 100%);
+  transform: scale(1.04) rotate(-1deg);
+}
+
+/* 애니메이션 효과 */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+#todo-list li.removing {
+  opacity: 0;
+  transform: translateY(40px) scale(0.95) rotate(-2deg);
+  transition: opacity 0.4s, transform 0.4s;
+}
+
+@media (max-width: 500px) {
+  .max-w-md {
+    max-width: 98vw !important;
+    padding: 1.2rem !important;
+  }
+  #todo-form input, #todo-form button {
+    font-size: 1rem;
+    padding: 0.7rem 0.8rem;
+  }
+  #clear-btn {
+    font-size: 1rem;
+    padding: 0.7rem 0.8rem;
+  }
+}
